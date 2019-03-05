@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ElectronConnectPlugin = require('webpack-electron-connect-plugin');
 
 const commonConfig = {
     node: {
@@ -25,13 +24,7 @@ module.exports = [
     Object.assign(
         {
             target: 'electron-main',
-            entry: { main: './src/main/main.ts' },
-            plugins: [
-                new ElectronConnectPlugin({
-                    type: "reload",
-                    options: {}
-                })
-            ]
+            entry: { main: './src/main/main.ts' }
         },
         commonConfig
     ),
